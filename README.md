@@ -13,7 +13,7 @@ Before running this project, make sure you have the following installed:
 
 1. Clone the repository to your local machine:
 
-```git clone https://github.com/your-username/jpa-mysql-sample.git```
+```git clone https://github.com/Folkrom/jpa-mysql.git```
 
 2. Open the project in your favorite Java IDE.
 3. Modify the persistence.xml file located in the src/main/resources/META-INF directory. Update the following properties to match your MySQL database configuration:
