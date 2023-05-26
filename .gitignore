@@ -2,3 +2,4 @@ persistence.xml
 target
 src/test
 .vscode
+db.sql
