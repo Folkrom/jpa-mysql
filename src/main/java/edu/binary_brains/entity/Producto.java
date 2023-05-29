@@ -1,5 +1,7 @@
 package edu.binary_brains.entity;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -71,4 +73,20 @@ public class Producto {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Producto other = (Producto) obj;
+        return Objects.equals(nombre, other.nombre)
+                && Objects.equals(descripcion, other.descripcion)
+                && Objects.equals(precio, other.precio)
+                && Objects.equals(stock, other.stock);
+    }
+
 }

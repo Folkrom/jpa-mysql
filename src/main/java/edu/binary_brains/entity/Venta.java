@@ -1,6 +1,7 @@
 package edu.binary_brains.entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -80,6 +81,20 @@ public class Venta {
 
     public void setFechaVenta(Date fechaVenta) {
         this.fechaVenta = fechaVenta;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Venta other = (Venta) obj;
+        return Objects.equals(cliente, other.cliente)
+                && Objects.equals(producto, other.producto)
+                && Objects.equals(cantidad, other.cantidad)
+                && Objects.equals(fechaVenta, other.fechaVenta);
     }
 
 }

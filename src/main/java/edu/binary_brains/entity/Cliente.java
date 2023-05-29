@@ -1,5 +1,7 @@
 package edu.binary_brains.entity;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +21,7 @@ public class Cliente {
     private String telefono;
 
     // Constructor, getters y setters
-    
+
     // Constructor vacío requerido por JPA
     public Cliente() {
     }
@@ -30,7 +32,7 @@ public class Cliente {
         this.direccion = direccion;
         this.telefono = telefono;
     }
-    
+
     // Getters y setters
     public int getId() {
         return this.id;
@@ -64,5 +66,18 @@ public class Cliente {
         this.telefono = telefono;
     }
 
-}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Cliente other = (Cliente) obj;
+        return Objects.equals(nombre, other.nombre)
+                && Objects.equals(direccion, other.direccion)
+                && Objects.equals(telefono, other.telefono);
+    }
 
+}
