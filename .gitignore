@@ -1,5 +1,5 @@
 persistence.xml
 target
-src/test
+# src/test
 .vscode
 db.sql
